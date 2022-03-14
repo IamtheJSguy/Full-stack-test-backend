@@ -27,4 +27,4 @@ app.use(function(err, req, res, next) {
 
 const http = require('http').Server(app);
 
-http.listen(process.env.PORT || 5000, () => console.log(`Listening on port: ${process.env.PORT || 5000}`));
+app.listen(process.env.PORT || 5000, () => console.log(`Listening on port: ${ process.env.PORT || 5000}`));
