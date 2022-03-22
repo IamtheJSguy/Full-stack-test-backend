@@ -40,19 +40,26 @@ module.exports = {
                     return res.status(401).json(result)
                 }
                 let user = result.data[0]
-                if (user.email) {
-                    let checkPass = await bcryptjs.compare(req.body.password, user.password);
-                    if (!checkPass) {
+                if (user) {
+                    if (user.email) {
+                        let checkPass = await bcryptjs.compare(req.body.password, user.password);
+                        if (!checkPass) {
+                            return res.status(401).json({
+                                status: false,
+                                errCredentials: 'Email/Password incorrect'
+                            })
+                        }
+                        return res.status(200).json({
+                            status: true,
+                            message: 'Succesfully Logged In',
+                            data: user
+                        })
+                    } else {
                         return res.status(401).json({
                             status: false,
                             errCredentials: 'Email/Password incorrect'
                         })
                     }
-                    return res.status(200).json({
-                        status: true,
-                        message: 'Succesfully Logged In',
-                        data: user
-                    })
                 } else {
                     return res.status(401).json({
                         status: false,
