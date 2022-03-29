@@ -6,6 +6,8 @@ Repository URL: https://github.com/symphony-dev/Full-Stack-test-backend.git
 Repository Name: Full-stack-test-frontend.git
 Repository URL: https://github.com/symphony-dev/Full-Stack-test-frontend.git
 
+<h3> Steps for Deployment </h3>
+
 1 - Create and launch a new Ubuntu Server on AWS EC2 for backend service 
 
 2 - Create and launch a new Ubuntu Server on AWS EC2 for frontend service
